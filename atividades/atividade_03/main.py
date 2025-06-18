@@ -2,18 +2,44 @@
 import math
 import os
 
-def calcular_area_circulo(raio):
-  return math.pi * (raio ** 2)
-import math
+while True:
+    # menu
+    print(f"{'-'*20} MENU {'-'*20}\n")
+    print("1 - Calcular área de um circulo")
+    print("2 - Calcular área de uma circuferência")
+    print("3 - Sair do programa")
+    opcao = input("Informe sua opção: ").strip()
 
-def calcular_comprimento_circunferencia(raio):
-  comprimento = 2 * math.pi * raio
-  return comprimento
+    os.system("cls" if os.name == "nt" else "clear")
 
-# Exemplo de uso
-raio = int(input("Informe o raio do circulo que deseja calcular: "))
-area = calcular_area_circulo(raio)
-os.system("cls")
-print(f"A área do círculo com raio {raio} é: {area:.2f}: ")
-comprimento = calcular_comprimento_circunferencia(raio)
-print(f"O comprimento da circunferência com raio {raio} é: {comprimento:.2f}")
+    try:
+        if opcao == "1" or opcao == "2":
+            raio = float(input("informe o valor do raio: ").replace(",", "."))
+        else:
+            ...
+
+        match opcao:
+            case "1":
+                area = math.pi * (raio ** 2)
+                os.system("cls" if os.name == "nt" else "clear")
+                print(f"Área do circulo: {area:.3f}")
+                continue
+        
+            case "2":
+                circuferencia = 2 * math.pi * raio
+                os.system("cls" if os.name == "nt" else "clear")
+                print(f"Tamanho da circuferência: {circuferencia:.3f}")
+                continue
+
+            case "3":
+                print("Programa encerrado.")
+                break
+
+            case _:
+                os.system("cls" if os.name == "nt" else "clear")
+                print(f"Opção inválida.")
+                continue
+
+    except Exception as e:
+        print(f"Não foi possível calcular. {e}.")
+        continue
