@@ -1,0 +1,2 @@
+Aula de manipulação de arquivos com Python.
+Novo texto no arquivo "MSG".
