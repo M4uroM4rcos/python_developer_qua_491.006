@@ -42,7 +42,7 @@ try:
         pessoas = json.load(f)
     print(f"{'-'*20} LISTA DE PESSOAS {'-'*20}")
     for pessoa in pessoas:
-        for chave in pessoas:
+        for chave in pessoa:
             print(f"{chave.capitalize()}: {pessoa.get(chave)}")
         print('-'*58)
 
